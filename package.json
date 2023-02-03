@@ -9,7 +9,6 @@
     "firebase": "^9.6.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-heart-checkbox": "^0.0.4",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-show-more-text": "^1.6.2",

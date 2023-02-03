@@ -1,0 +1,30 @@
+/*components/Navbar/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    height: 70px;
+
+}
+.navbar .heading {
+    color: #873d7e;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.signOut {
+    color: #873d7e;
+    font-size: 23px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 13px;
+}
+
+.signOut:hover {
+    cursor: pointer;
+    color: black;
+    transition: 0.2s;
+  }

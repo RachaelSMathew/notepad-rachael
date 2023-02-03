@@ -6,7 +6,7 @@ import {auth } from '../../firebase'
 const Navbar = () => {
   return (
     <>
-      <span className="signOut" onClick={() => signOut(auth)}>Sign Out</span>
+      <h4 className="signOut" onClick={() => signOut(auth)}>Sign Out</h4>
       <header className="navbar">
         <h2 className="heading">📓 Rachael and Friends Notebook </h2>
         

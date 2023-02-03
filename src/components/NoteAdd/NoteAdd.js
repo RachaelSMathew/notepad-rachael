@@ -8,7 +8,24 @@ import Switch from "react-switch";
 
 
 const NoteAdd = () => {
-  const [avatar, setAvatar] = React.useState([]);
+  const [avatar, setAvatar] = React.useState(getAvatars());
+  const getAvatars = () => {
+    let results = []
+    let exists = firebase
+    .database()
+    .ref("users/avatars")
+    if(exists) {
+      exists.orderByKey().once('value').then(function(snapshot)
+        {
+          snapshot.forEach(function(child) {
+            let avatar = child.val().email + " " + child.val().avatar
+            results.push(avatar);
+           })
+           
+        }) 
+    }
+    return results
+  }
   const emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "🤣", "😂", "🙂", "🙃", "😉", "😊", "😇", "🥰", "😍", "🤩", "😘", "😗", "😚", "😙", "😋", "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🤩", "🥳", "😏", "😒", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔", "🤭", "🤫", "🤥", "😶", "😐", "😑", "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "😴", "🤤", "😪", "😵", "🤐", "🥴", "🤢", "🤮", "🤕", "🥳", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "👹", "👺", "💀", "👻", "👽", "🤖", "💩", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾"]
   const {currentUser} = useAuthValue()
   const [checked, setChecked] = React.useState(false);
@@ -19,7 +36,6 @@ const NoteAdd = () => {
   };
   const avatarSet = () => {
     const emojiExists = avatar.filter((ava) => ava.startsWith(currentUser?.email))
-    console.log("This"+emojiExists)
     if(emojiExists[0]) {
       return emojiExists[0].substring(emojiExists[0].indexOf(' ') + 1);
     }
@@ -27,6 +43,7 @@ const NoteAdd = () => {
     let avatarClone = avatar
     avatarClone.push(currentUser?.email + " " + emoji)
     setAvatar([...avatarClone])
+    firebase.database().ref("users").set({"avatars" : avatar})
     return emoji
   }
 

@@ -27,7 +27,8 @@ function Profile() {
         title: snapshot.val().title,
         description: snapshot.val().description,
         avatar: snapshot.val().avatar,
-        heart: []
+        heart: snapshot.val().heart,
+        heartCount : snapshot.val().heart ? snapshot.val().heart.length : 0
       };
       let notebook = noteBookData;
       notebook.push(note);
@@ -45,7 +46,8 @@ function Profile() {
           id: snapshot.key,
           title: snapshot.val().title,
           description: snapshot.val().description,
-          heart: []
+          heart: snapshot.val().heart,
+          heartCount : snapshot.val().heart ? snapshot.val().heart.length : 0
         };
         let notebook = noteBookData;
         notebook.push(note);

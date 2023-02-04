@@ -1,4 +1,8 @@
-
+.heartCountText {
+  color: peachpuff;
+  display: inline-block; 
+  margin-left: 160px !important;
+}
 
 .extraNotes {
   white-space: nowrap; 
@@ -6,7 +10,7 @@
 .checkmark {
   font-size: 30px;
   display: inline-block; 
-  margin-left: 180px !important;
+  margin-left: 20px !important;
 
 }
 input[type='checkbox'] {

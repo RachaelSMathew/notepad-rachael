@@ -11,36 +11,36 @@ const Notebook = (props) => {
   const {currentUser} = useAuthValue()
   const [notebookData, setNotebook] = useState(props.notebook);
   const emailExists = (notes, email) => {
+    if(!notes) return false 
     return notes.includes(email)
   };
   const handleData = (e, id, notePublic) => {
-    var result = [...notebookData];
+    var result = notebookData;
     result = result.map((x) => { //x == note 
-      
       if (x.id === id) {
         if(!x.heart) {
           x.heart = [currentUser?.email]
-          return x;
         } else {
           if(emailExists(x.heart, currentUser?.email)) {
             x.heart = x.heart.filter((email) => email !== currentUser?.email)
-            return x;
           } else {
             x.heart.push(currentUser?.email)
-            /*
-            if(notePublic) {
-              firebase.database().ref("notebook/public/"+id).update({heart: x.heart})
-            } else {
-              firebase.database().ref("notebook/"+currentUser?.email+id).update({heart: x.heart})
-            }
-            */
-            return x;
           }
         }
-      } return x;
+        if(notePublic) {
+          firebase.database().ref("notebook/public/"+id).update({heart: x.heart})
+        } else {
+          firebase.database().ref("notebook/"+currentUser?.email.toString().replace('.com', '').replace('.edu', '')+"/"+id).update({heart: x.heart})
+        }
+      } 
+
+      x.heartCount = x.heart ? x.heart.length : 0
+      console.log("This is the heart learned" + x.heartCount)
+      return x;
     });
-    setNotebook(result);
+    setNotebook([...result]);
   };
+
   return (
     <>
       <section className="notebook-container">
@@ -66,11 +66,13 @@ const Notebook = (props) => {
                 {note.public ? (
                   <h3 className="public-text">🌎</h3> 
                 ) : (<h3 className="public-text">🔒</h3>)}
+                <h3 className="heartCountText">{note.heartCount} </h3> 
                 <input
                   type="button"
                   className="checkmark"
                   value={emailExists(note.heart, currentUser?.email) ? "❤️":"🤍"}
-                  onClick={(e) => handleData(e, note.id, note.public)} />    
+                  onClick={(e) => handleData(e, note.id, note.public)} />   
+                
                 </div>            
               </div>
             </React.Fragment> 

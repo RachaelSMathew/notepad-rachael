@@ -79,7 +79,8 @@ const NoteAdd = () => {
                 public: true,
                 description: description,
                 avatar: avatarSign,
-                heart: []
+                heart: [],
+                heartCount : 0
               });
         } else {
         firebase.database().ref("notebook/"+currentUser?.email.toString().replace('.com', '').replace('.edu', '')).push({
@@ -88,7 +89,8 @@ const NoteAdd = () => {
             public: false,
             description: description,
             avatar: avatarSign,
-            heart: []
+            heart: [],
+            heartCount : 0
         });
         }
     }

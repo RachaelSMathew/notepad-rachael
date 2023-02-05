@@ -46,6 +46,7 @@ function Register() {
   }
 
   return (
+    <div className="register-background">
     <div className='center'>
       <div className='auth'>
         <h1>Register</h1>
@@ -79,6 +80,7 @@ function Register() {
           <Link to='/login'>login</Link>
         </span>
       </div>
+    </div>
     </div>
   )
 }

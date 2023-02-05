@@ -13,7 +13,6 @@
     "react-scripts": "5.0.0",
     "react-show-more-text": "^1.6.2",
     "react-switch": "^7.0.0",
-    "react-textfit": "^1.1.1",
     "web-vitals": "^2.1.2"
   },
   "scripts": {

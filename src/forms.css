@@ -5,8 +5,14 @@
   color: mintcream;
 }
 .welcome-text {
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px mintcream;
   font-family: 'Poppins', sans-serif;
+}
+.welcome-text h2 {
+  color: mintscream;
+  font-size: 8em;
+  position: absolute;
+  transform: translate(-20%, -40%);
 }
 .auth{
   width: 90%;

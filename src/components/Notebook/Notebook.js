@@ -1,4 +1,6 @@
 // components/Notebook/NoteAdd.js
+import { Textfit } from 'react-textfit';
+
 import React, { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/database";
@@ -7,13 +9,27 @@ import ShowMoreText from "react-show-more-text";
 import {useAuthValue} from '../../AuthContext'
 
 const Notebook = (props) => {
- 
+
+  const [heart, setHeart] = React.useState(false);
+  const [publicFilt, setPublicFilt] = React.useState(true);
+  const [privateFilt, setPrivateFilt] = React.useState(true);
   const {currentUser} = useAuthValue()
   const [notebookData, setNotebook] = useState(props.notebook);
   const emailExists = (notes, email) => {
     if(!notes) return false 
     return notes.includes(email)
   };
+  const clickFilter = (e, filter) => {
+    if(filter === "heart") {
+      setHeart(!heart)
+    } 
+    if(filter === "private") {
+      setPrivateFilt(!privateFilt)
+    } 
+    if(filter === "public") {
+      setPublicFilt(!publicFilt)
+    }
+  }
   const handleData = (e, id, notePublic) => {
     var result = notebookData;
     result = result.map((x) => { //x == note 
@@ -43,19 +59,21 @@ const Notebook = (props) => {
 
   return (
     <>
+    <div className="extraNotes">
+    <div className="icons-filter-show-text">show</div>
+<div onClick={(e) => clickFilter(e, "heart")} className={`icons-filter ${heart ? "opacity" : ""}`} >❤️</div>
+<div onClick={(e) => clickFilter(e, "private")} className={`icons-filter ${privateFilt ? "opacity" : ""}`}>🔒</div>
+<div onClick={(e) => clickFilter(e, "public")} className={`icons-filter ${publicFilt ? "opacity" : ""}`}>🌎</div>
+</div>
       <section className="notebook-container">
         <div className="notebook">
           {props.notebook.map((note, index) => (
+            (heart && emailExists(note.heart, currentUser?.email)) || (publicFilt || privateFilt) && (publicFilt === note.public || privateFilt === !note.public) ?
             <React.Fragment key={index}>
               <div className={`${note.public ? "notebookInfo publicPost" : "notebookInfo"}`} key={note.id}>
-              {note.public  && note.email !== currentUser?.email ? (
-                  <div className="notebookInfo-user">
-                    <h3 className="tooltip">{note.avatar} <span class="tooltiptext">{note.email}</span></h3>
-                    
-                  </div>
-                ) : (
-                  null
-                )}
+                <div className="notebookInfo-user">
+                  <h3 className="tooltip">{note.avatar} <Textfit max="20" forceSingleModeWidth={true} mode="single" class={`tooltiptext ${note.public ? "tip-public" : "tip-private"}`}>{note.email === currentUser?.email ? "my tweet" : note.email.split('@')[0] }</Textfit> </h3>
+                </div>
                 <div className="notebookInfo-title">
                   <h3><ShowMoreText lines={3} width={340} keepNewLines={true}>{note.title}</ShowMoreText></h3>
                 </div>
@@ -75,7 +93,7 @@ const Notebook = (props) => {
                 
                 </div>            
               </div>
-            </React.Fragment> 
+            </React.Fragment> : null
           ))}
         </div>
       </section>

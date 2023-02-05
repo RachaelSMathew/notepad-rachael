@@ -48,7 +48,7 @@ function Register() {
   return (
     <div className="register-background">
     <div id="scroll-container">
-      <div id="scroll-text">Tdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefault<div>
+      <div id="scroll-text">Tdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefault</div>
     </div>
     <div className='center'>
       <div className='auth'>

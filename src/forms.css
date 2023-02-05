@@ -68,7 +68,7 @@
   color: #fff;
   font-size: 8em;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-20%, -40%);
 }
 
 .conTitle h2:nth-child(1) {

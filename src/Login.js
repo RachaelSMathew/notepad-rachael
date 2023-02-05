@@ -46,10 +46,6 @@ function Login(){
       </div>
     </div>
     <div className='center'>
-      <div className="welcome-text">
-      <h2>Welcome to Rachael's Notepad</h2>
-      <h2>Welcome to Rachael's Notepad</h2>
-      </div>
       <div className='auth'>
         <h1>Log in</h1>
         {error && <div className='auth__error'>{error}</div>}

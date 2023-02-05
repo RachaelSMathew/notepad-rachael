@@ -8,7 +8,7 @@ import {useAuthValue} from '../../AuthContext'
 
 const Notebook = (props) => {
 
-  const [heart, setHeart] = React.useState(false);
+  const [heart, setHeart] = React.useState(true);
   const [publicFilt, setPublicFilt] = React.useState(true);
   const [privateFilt, setPrivateFilt] = React.useState(true);
   const {currentUser} = useAuthValue()

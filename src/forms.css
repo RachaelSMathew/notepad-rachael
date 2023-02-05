@@ -4,7 +4,10 @@
   font-family: 'Poppins', sans-serif;
   color: mintcream;
 }
-
+.welcome-text {
+  -webkit-text-stroke: 1px white;
+  font-family: 'Poppins', sans-serif;
+}
 .auth{
   width: 90%;
   max-width: 400px;

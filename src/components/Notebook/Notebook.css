@@ -62,6 +62,7 @@ input[type='checkbox'] {
   position: absolute;
   margin-top:-40px;
   z-index: 1;
+  font-size: 0.58em;
 }
 .tooltip:hover {
   cursor: pointer;

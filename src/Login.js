@@ -35,7 +35,7 @@ function Login(){
 
   return(
     <div className="login-background">
-      <div className="box">
+    <div className="box">
     <div class="wrapper">
       <div class="marquee">
         <p>

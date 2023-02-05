@@ -35,11 +35,11 @@ function Login(){
 
   return(
     <div className="login-background">
-    <div className="conTitle">
-    <h2>Welcome to Rachael's Notepad</h2>
-    <h2>Welcome to Rachael's Notepad</h2>
-    </div>
     <div className='center'>
+      <div className="conTitle">
+      <h2>Welcome to Rachael's Notepad</h2>
+      <h2>Welcome to Rachael's Notepad</h2>
+      </div>
       <div className='auth'>
         <h1>Log in</h1>
         {error && <div className='auth__error'>{error}</div>}

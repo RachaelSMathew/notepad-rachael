@@ -1,3 +1,28 @@
+.icons-filter {
+  opacity: .2;
+  font-size: 30px;
+  display: inline-block; 
+  margin-left: 20px !important;
+
+}
+.icons-filter-show-text {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(109 57 129);
+  font-weight: 700;
+  cursor:  default;
+  font-size: 30px;
+  display: inline-block; 
+  margin-left: 20px !important;
+
+}
+
+.icons-filter:hover {
+  cursor: pointer;
+
+}
+.opacity {
+  opacity: 1;
+}
 .heartCountText {
   color: peachpuff;
   display: inline-block; 
@@ -20,7 +45,6 @@ input[type='checkbox'] {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 .public-text {
   font-size: 30px;
@@ -29,12 +53,10 @@ input[type='checkbox'] {
 }
 
 .tooltip .tooltiptext {
-  visibility: hidden;
   color: #fff;
   text-align: left;
   padding: 5px 0;
   margin-left:-230px;
-  font-size: 14px;
   font-family: 'Poppins', sans-serif;
   /* Position the tooltip */
   position: absolute;
@@ -46,6 +68,12 @@ input[type='checkbox'] {
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+.tooltip:hover .tip-private {
+  text-shadow: -2px -2px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 1px 1px 0 #000;
+}
+.tooltip:hover .tip-public {
+  text-shadow: -2px -2px 0 rgb(229, 158, 158), 2px -1px 0 rgb(229, 158, 158), -2px 1px 0 rgb(229, 158, 158), 1px 1px 0 rgb(229, 158, 158);
 }
 .notebook {
     display: grid;

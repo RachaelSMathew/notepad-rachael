@@ -47,11 +47,10 @@ function Register() {
 
   return (
     <div className="register-background">
+    <div id="scroll-container">
+      <div id="scroll-text">Tdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefault<div>
+    </div>
     <div className='center'>
-      <div className="welcome-text">
-      <h2>Welcome to Rachael's Notepad</h2>
-      <h2>Welcome to Rachael's Notepad</h2>
-      </div>
       <div className='auth'>
         <h1>Register</h1>
         {error && <div className='auth__error'>{error}</div>}

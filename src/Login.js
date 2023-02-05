@@ -35,18 +35,10 @@ function Login(){
 
   return(
     <div className="login-background">
-    <svg viewBox="0 10 1960 300">
-    <symbol id="s-text">
-      <text text-anchor="middle" x="50%" y="80%">WELCOME RACHAEL. </text>
-    </symbol>
-    <g class = "g-ants">
-      <use xlink:href="#s-text" class="text-copy"></use>
-      <use xlink:href="#s-text" class="text-copy"></use>
-      <use xlink:href="#s-text" class="text-copy"></use>
-      <use xlink:href="#s-text" class="text-copy"></use>
-      <use xlink:href="#s-text" class="text-copy"></use>
-    </g>
-    </svg>
+    <div className="welcome-text">
+    <h2>Welcome to Rachael's Notepad</h2>
+    <h2>Welcome to Rachael's Notepad</h2>
+    </div>
     <div className='center'>
       <div className='auth'>
         <h1>Log in</h1>

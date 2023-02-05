@@ -47,6 +47,10 @@ function Register() {
 
   return (
     <div className="register-background">
+    <div className="conTitle">
+    <h2>Welcome to Rachael's Notepad</h2>
+    <h2>Welcome to Rachael's Notepad</h2>
+    </div>
     <div className='center'>
       <div className='auth'>
         <h1>Register</h1>

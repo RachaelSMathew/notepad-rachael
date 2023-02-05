@@ -4,17 +4,53 @@
   font-family: 'Poppins', sans-serif;
   color: mintcream;
 }
-.welcome-text {
-  -webkit-text-stroke: 2px mintcream;
-  color: transparent; 
-  position: relative;
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    height: 300px;
+    width: 100%;
 }
-.welcome-text h2 {
-  color: mintscream;
-  font-size: 8em;
-  position: absolute;
-  transform: translate(-20%, -40%);
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
 }
+
+.text-copy:nth-child(1){
+	stroke: #4D163D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #840037;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #BD0034;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #BD0034;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FDB731;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
+
 .auth{
   width: 90%;
   max-width: 400px;

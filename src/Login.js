@@ -35,6 +35,7 @@ function Login(){
 
   return(
     <div className="login-background">
+      <div className="box">
     <div class="wrapper">
       <div class="marquee">
         <p>
@@ -45,6 +46,68 @@ function Login(){
         </p>
       </div>
     </div>
+    <div class="wrapper">
+      <div class="marquee-right">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="marquee">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="marquee-right">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="marquee">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="marquee-right">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="marquee">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
+      </div>
+    </div>
+    </div>
+    <div class="box stack-top">
     <div className='center'>
       <div className='auth'>
         <h1>Log in</h1>
@@ -72,15 +135,6 @@ function Login(){
         </p>
       </div>
     </div>
-    <div class="wrapper">
-      <div class="marquee">
-        <p>
-        • welcome to rachael's notepad 
-        </p>
-        <p>
-        • welcome to rachael's notepad •
-        </p>
-      </div>
     </div>
     </div>
   )

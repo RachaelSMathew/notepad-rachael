@@ -49,9 +49,8 @@ function Register() {
     <div className="register-background">
     <div className='center'>
       <div className="conTitle">
-      <div className="welcome-text">Welcome</div>
-      <h2> to Rachael's Notepad</h2>
-      <h2> to Rachael's Notepad</h2>
+      <h2>Welcome to Rachael's Notepad</h2>
+      <h2>Welcome to Rachael's Notepad</h2>
       </div>
       <div className='auth'>
         <h1>Register</h1>

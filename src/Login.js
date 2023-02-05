@@ -35,6 +35,16 @@ function Login(){
 
   return(
     <div className="login-background">
+    <div class="wrapper">
+      <div class="marquee">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
+      </div>
+    </div>
     <div className='center'>
       <div className="welcome-text">
       <h2>Welcome to Rachael's Notepad</h2>
@@ -63,6 +73,16 @@ function Login(){
         <p>
           Don't have and account? 
           <Link to='/register'>Create one here</Link>
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="marquee">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
         </p>
       </div>
     </div>

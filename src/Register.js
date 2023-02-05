@@ -47,8 +47,15 @@ function Register() {
 
   return (
     <div className="register-background">
-    <div id="scroll-container">
-      <div id="scroll-text">Tdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefaultdefault</div>
+    <div class="wrapper">
+      <div class="marquee">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
+      </div>
     </div>
     <div className='center'>
       <div className='auth'>
@@ -82,6 +89,16 @@ function Register() {
           Already have an account?  
           <Link to='/login'>login</Link>
         </span>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="marquee">
+        <p>
+        • welcome to rachael's notepad 
+        </p>
+        <p>
+        • welcome to rachael's notepad •
+        </p>
       </div>
     </div>
     </div>

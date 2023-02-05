@@ -5,8 +5,9 @@
   color: mintcream;
 }
 .welcome-text {
-  -webkit-text-stroke: 1px mintcream;
-  font-family: 'Poppins', sans-serif;
+  -webkit-text-stroke: 2px mintcream;
+  color: transparent; 
+  position: relative;
 }
 .welcome-text h2 {
   color: mintscream;

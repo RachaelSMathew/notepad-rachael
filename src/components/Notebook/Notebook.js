@@ -1,6 +1,4 @@
 // components/Notebook/NoteAdd.js
-import { Textfit } from 'react-textfit';
-
 import React, { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/database";
@@ -72,7 +70,7 @@ const Notebook = (props) => {
             <React.Fragment key={index}>
               <div className={`${note.public ? "notebookInfo publicPost" : "notebookInfo"}`} key={note.id}>
                 <div className="notebookInfo-user">
-                  <h3 className="tooltip">{note.avatar} <Textfit max="20" forceSingleModeWidth={true} mode="single" class={`tooltiptext ${note.public ? "tip-public" : "tip-private"}`}>{note.email === currentUser?.email ? "my tweet" : note.email.split('@')[0] }</Textfit> </h3>
+                  <h3 className="tooltip">{note.avatar} <span class={`tooltiptext ${note.public ? "tip-public" : "tip-private"}`}>{note.email === currentUser?.email ? "my tweet" : note.email.split('@')[0] }</span> </h3>
                 </div>
                 <div className="notebookInfo-title">
                   <h3><ShowMoreText lines={3} width={340} keepNewLines={true}>{note.title}</ShowMoreText></h3>

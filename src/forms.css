@@ -1,3 +1,10 @@
+::placeholder {
+  font-style: italic;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  color: mintcream;
+}
+
 .auth{
   width: 90%;
   max-width: 400px;
@@ -66,11 +73,11 @@
 
 .conTitle h2:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 2px #03a9f4;
+  -webkit-text-stroke: 2px mintcream;
 }
 
 .conTitle h2:nth-child(2) {
-  color: #03a9f4;
+  color: mintcream;
   animation: animateTitle 4s ease-in-out infinite;
 }
 

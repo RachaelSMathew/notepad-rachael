@@ -5,60 +5,32 @@
   color: mintcream;
 }
 
-.welcome-text {
-  -webkit-text-stroke: 2px mintcream;
-  color: transparent; 
-  position: relative;
-}
-.welcome-text h2 {
-  color: mintscream;
-  font-size: 8em;
-  position: absolute;
-  transform: translate(-20%, -40%);
-}
-
-#scroll-container {
+.wrapper {
+  max-width: 100%;
   overflow: hidden;
+}
+
+.marquee {
   -webkit-text-stroke: 2px mintcream;
   color: transparent; 
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 30s linear infinite;
 }
 
-#scroll-text {
-  text-align: right;
+.marquee p {
   color: mintscream;
   font-size: 8em;
-  /* animation properties */
-  -moz-transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  
-  -moz-animation: my-animation 15s linear infinite;
-  -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
+  display: inline-block;
 }
 
-/* for Firefox */
-@-moz-keyframes my-animation {
-  from { -moz-transform: translateX(-100%); }
-  to { -moz-transform: translateX(100%); }
-}
-
-/* for Chrome */
-@-webkit-keyframes my-animation {
-  from { -webkit-transform: translateX(-100%); }
-  to { -webkit-transform: translateX(100%); }
-}
-
-@keyframes my-animation {
-  from {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
   }
-  to {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -113,4 +85,3 @@
 		background-position: 0% 50%;
 	}
 }
-

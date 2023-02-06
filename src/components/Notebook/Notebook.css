@@ -5,6 +5,9 @@
   margin-left: 20px !important;
 
 }
+.pointer-cursor {
+  cursor: pointer;
+}
 .icons-filter-show-text {
   font-family: 'Poppins', sans-serif;
   color: rgb(109 57 129);

@@ -28,6 +28,28 @@ const Notebook = (props) => {
       setPublicFilt(!publicFilt)
     }
   }
+  const removeNote = (e, id, isPublic) => {
+    var result = notebookData;
+    result = result.map(notes => {
+      if(notes) {
+        console.log(notes)
+        console.log(id)
+        if(notes.id === id) {
+          console.log("here")
+          notes.display = 0;
+        }
+      }
+      return notes;
+    })
+    setNotebook(result)
+
+    if(isPublic) {
+      firebase.database().ref("notebook/public/"+id).remove()
+    } else {
+      firebase.database().ref("notebook/"+currentUser?.email.toString().replace('.com', '').replace('.edu', '')+"/"+id).remove()
+    }
+
+  }
   const handleData = (e, id, notePublic) => {
     var result = notebookData;
     result = result.map((x) => { //x == note 
@@ -59,14 +81,14 @@ const Notebook = (props) => {
     <>
     <div className="extraNotes">
     <div className="icons-filter-show-text">show</div>
-<div onClick={(e) => clickFilter(e, "heart")} className={`icons-filter ${heart ? "opacity" : ""}`} >❤️</div>
-<div onClick={(e) => clickFilter(e, "private")} className={`icons-filter ${privateFilt ? "opacity" : ""}`}>🔒</div>
-<div onClick={(e) => clickFilter(e, "public")} className={`icons-filter ${publicFilt ? "opacity" : ""}`}>🌎</div>
-</div>
+    <div onClick={(e) => clickFilter(e, "heart")} className={`icons-filter ${heart ? "opacity" : ""}`} >❤️</div>
+    <div onClick={(e) => clickFilter(e, "private")} className={`icons-filter ${privateFilt ? "opacity" : ""}`}>🔒</div>
+    <div onClick={(e) => clickFilter(e, "public")} className={`icons-filter ${publicFilt ? "opacity" : ""}`}>🌎</div>
+    </div>
       <section className="notebook-container">
         <div className="notebook">
           {props.notebook.map((note, index) => (
-            (heart && emailExists(note.heart, currentUser?.email)) || (publicFilt || privateFilt) && (publicFilt === note.public || privateFilt === !note.public) ?
+            note.display !== 0 && ((heart && emailExists(note.heart, currentUser?.email)) || (publicFilt || privateFilt) && (publicFilt === note.public || privateFilt === !note.public)) ?
             <React.Fragment key={index}>
               <div className={`${note.public ? "notebookInfo publicPost" : "notebookInfo"}`} key={note.id}>
                 <div className="notebookInfo-user">
@@ -76,9 +98,10 @@ const Notebook = (props) => {
                   <h3><ShowMoreText lines={3} width={340} keepNewLines={true}>{note.title}</ShowMoreText></h3>
                 </div>
                 <div className="notebookInfo-description">
-                  <p><ShowMoreText lines={3} width={340} keepNewLines={true}>{note.description}</ShowMoreText></p>
+                  <ShowMoreText lines={3} width={340} keepNewLines={true}>{note.description}</ShowMoreText>
                 </div>
                 <div className="extraNotes">
+                {note.email === currentUser?.email ? (<h3  onClick={(e) => removeNote(e, note.id, note.public)} className="public-text">🗑️</h3>): (null)}
                 {note.public ? (
                   <h3 className="public-text">🌎</h3> 
                 ) : (<h3 className="public-text">🔒</h3>)}

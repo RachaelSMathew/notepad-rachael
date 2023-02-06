@@ -101,7 +101,7 @@ const Notebook = (props) => {
                   <ShowMoreText lines={3} width={340} keepNewLines={true}>{note.description}</ShowMoreText>
                 </div>
                 <div className="extraNotes">
-                {note.email === currentUser?.email ? (<h3  onClick={(e) => removeNote(e, note.id, note.public)} className="public-text">🗑️</h3>): (null)}
+                {note.email === currentUser?.email ? (<h3  onClick={(e) => removeNote(e, note.id, note.public)} className="pointer-cursor public-text">🗑️</h3>): (null)}
                 {note.public ? (
                   <h3 className="public-text">🌎</h3> 
                 ) : (<h3 className="public-text">🔒</h3>)}

@@ -101,13 +101,15 @@ const NoteAdd = () => {
       <div className="noteadd">
         <h1>Add a New Note</h1>
         <div className="form-group">
-          <textarea
+          <input
+            type="text"
+            placeholder= "Note Title maxChar: 30"
             className="noteadd-header"
             name="noteadd-header"
             value={title}
             maxLength = "30" 
             onChange={(val) => handleTitleChange(val)}
-            >Note Title maxChar = 30</textarea>
+            />
         </div>
         <div className="form-group">
           <textarea

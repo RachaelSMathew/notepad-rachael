@@ -70,6 +70,7 @@ const NoteAdd = () => {
   };
 
   const addNote = async () => {
+    document.getElementsByClassName("noteadd").getElementsByClassName("form-group").getElementsByClassName("noteadd-header noteadd-description").value = "";
     let avatarSign = avatarSet()
     if (title !== "" && description !== "") {
         if(checked) {

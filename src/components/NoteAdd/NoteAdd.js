@@ -140,7 +140,7 @@ const NoteAdd = () => {
                 alignItems: "center",
                 height: "100%",
                 fontSize: 15,
-                color: "orange",
+                color: "black",
                 marginLeft: "5px",
                 marginRight: "5px",
                 paddingRight: 2

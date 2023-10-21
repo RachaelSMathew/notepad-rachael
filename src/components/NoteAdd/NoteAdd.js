@@ -70,6 +70,7 @@ const NoteAdd = () => {
   };
 
   const addNote = async () => {
+    document.getElementsByClassName("noteadd").value = "";
     let avatarSign = avatarSet()
     if (title !== "" && description !== "") {
         if(checked) {

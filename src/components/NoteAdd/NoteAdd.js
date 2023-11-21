@@ -57,8 +57,8 @@ const NoteAdd = () => {
     return emoji
   }
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState("Note Title maxChar: 30");
+  const [description, setDescription] = useState("Description: required");
 
   const handleTitleChange = (event) => {
     setHeight({height: 500})
@@ -94,6 +94,8 @@ const NoteAdd = () => {
         });
         }
     }
+    setTitle("");
+    setDescription("");
   };
 
   return (
@@ -103,7 +105,6 @@ const NoteAdd = () => {
         <div className="form-group">
           <input
             type="text"
-            placeholder= "Note Title maxChar: 30"
             className="noteadd-header"
             name="noteadd-header"
             value={title}

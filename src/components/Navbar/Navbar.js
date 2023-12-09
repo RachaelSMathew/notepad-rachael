@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <h4 className="signOut" onClick={() => signOut(auth)}>Sign Out</h4>
       <header className="navbar">
-        <h2 className="heading">📓 Rachael and Friends Notebook </h2>
+        <h2 className="heading">Rachael and Friends Notebook </h2>
         
       </header>
     </>
